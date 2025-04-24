@@ -102,6 +102,7 @@ main > section{
     max-width: 530px;
 }
 
+/* sponser related styles */
 
 #quick-list{
     font-weight: 500;
@@ -139,20 +140,47 @@ main > section{
 .fact-d{
     max-width: 540px;
 }
+
+.spnsr-info{
+    max-width: 540px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.spnsr-cmpny{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.spnsr-cmpny img{
+    filter: grayscale(100%);
+}
+
 /* responsive media qurey */
 @media screen and (max-width: 576px) {
     .navbar,
     .nav-links,
-    .teams
+    .teams{
+        flex-direction: column;
+    }
+    .team-img-contnr,
+    .fact-contnr,
+    .spnsr-cmpny
     {
-    flex-direction: column;
-   } 
-   .team-img-contnr{
-    grid-template-columns: repeat(1, 1fr);
-   }
-   .our-features{
-    margin-left: 20px;
-   }
+        grid-template-columns:  1fr;
+    }
+    .our-features{
+        margin-left: 20px;
+    }
+    .fact-contnr {
+        justify-items: center;
+        gap: 24px;
+    }
+
+    .spnsr-cmpny{
+        justify-items: center;
+        gap: 50px;
+    }
 }
 /* medium size device */
 
@@ -162,5 +190,11 @@ main > section{
     }
     .our-features{
         margin: 50px auto;
+    }
+    .spnsr-cmpny, .fact-contnr{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 50px;
+        justify-items: center;
+        
     }
 }
